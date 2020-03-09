@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="JianMin-Xie的博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://jianmin-xie.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="Vue" />
+
+
+<meta name="description" content="Vue 简介概述Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架，发布于 2014 年 2 月。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    什么是Vue |
+    
+    JianMin-Xie的博客
+</title>
+
+<link rel="alternate" href="/atom.xml" title="JianMin-Xie的博客" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    /img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='JianMin-Xie'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                 
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://jianmin-xie.github.io">
+                        JianMin-Xie的博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端/"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/后端/"><i class="fa "></i>
+                                后端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/工具/"><i class="fa "></i>
+                                工具</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="什么是Vue">
+            
+            什么是Vue
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/Vue/" rel="tag">Vue</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2020/03/10</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="Vue-简介"><a href="#Vue-简介" class="headerlink" title="Vue 简介"></a>Vue 简介</h1><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的<strong>渐进式框架</strong>，发布于 2014 年 2 月。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。<strong>Vue 的核心库只关注视图层</strong>，不仅易于上手，还便于与第三方库（如：<strong>vue-router，<del>vue-resource</del>，vuex</strong>）或既有项目整合。</p>
+<p><a href="http://www.qfdmy.com/wp-content/themes/quanbaike/go.php?url=aHR0cHM6Ly9jbi52dWVqcy5vcmcv" target="_blank" rel="noopener">官方网站</a></p>
+<h1 id="MVVM-模式的实现者"><a href="#MVVM-模式的实现者" class="headerlink" title="MVVM 模式的实现者"></a>MVVM 模式的实现者</h1><p>我们知道 MVVM 表示如下：</p>
+<ul>
+<li>Model：模型层，在这里表示 JavaScript 对象</li>
+<li>View：视图层，在这里表示 DOM（HTML 操作的元素）</li>
+<li>ViewModel：连接视图和数据的中间件，Vue.js 就是 MVVM 中的 ViewModel 层的实现者</li>
+</ul>
+<p><img src="http://www.qfdmy.com/wp-content/uploads/2019/08/65dff7b6ba81f8f.png" alt=""></p>
+<p>在 MVVM 架构中，是不允许 <strong>数据</strong> 和 <strong>视图</strong> 直接通信的，只能通过 <strong>ViewModel</strong> 来通信，而 ViewModel 就是定义了一个 <strong>Observer</strong> 观察者</p>
+<ul>
+<li>ViewModel 能够观察到数据的变化，并对视图对应的内容进行更新</li>
+<li>ViewModel 能够监听到视图的变化，并能够通知数据发生改变</li>
+</ul>
+<p>至此，我们就明白了，Vue.js 就是一个 MVVM 的实现者，他的核心就是实现了 <strong>DOM 监听</strong> 与 <strong>数据绑定</strong></p>
+<h1 id="其它-MVVM-实现者"><a href="#其它-MVVM-实现者" class="headerlink" title="其它 MVVM 实现者"></a>其它 MVVM 实现者</h1><ul>
+<li>AngularJS</li>
+<li>ReactJS</li>
+<li>微信小程序</li>
+</ul>
+<h1 id="为什么要使用-Vue-js"><a href="#为什么要使用-Vue-js" class="headerlink" title="为什么要使用 Vue.js"></a>为什么要使用 Vue.js</h1><ul>
+<li>轻量级，体积小是一个重要指标。Vue.js 压缩后有只有 20多kb （Angular 压缩后 56kb+，React 压缩后 44kb+）</li>
+<li>移动优先。更适合移动端，比如移动端的 Touch 事件</li>
+<li>易上手，学习曲线平稳，文档齐全</li>
+<li>吸取了 Angular（模块化）和 React（虚拟 DOM）的长处，并拥有自己独特的功能，如：计算属性</li>
+<li>开源，社区活跃度高</li>
+</ul>
+<h1 id="Vue-js-的两大核心要素"><a href="#Vue-js-的两大核心要素" class="headerlink" title="Vue.js 的两大核心要素"></a>Vue.js 的两大核心要素</h1><h2 id="数据驱动"><a href="#数据驱动" class="headerlink" title="数据驱动"></a>数据驱动</h2><p><img src="http://www.qfdmy.com/wp-content/uploads/2019/08/49933f4eeb6c704.png" alt=""></p>
+<h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><ul>
+<li>页面上每个独立的可交互的区域视为一个组件</li>
+<li>每个组件对应一个工程目录，组件所需的各种资源在这个目录下就近维护</li>
+<li>页面不过是组件的容器，组件可以嵌套自由组合（复用）形成完整的页面</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">JianMin-Xie</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2020/03/10/%E6%8F%90%E9%AB%98%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7lombok/" class="pre-post btn btn-default" title='提高开发效率必备工具lombok'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            提高开发效率必备工具lombok</span>
+    </a>
+    
+    
+    <a href="/2020/03/10/Spring-Cloud-Feign%E7%9A%84%E4%B8%80%E7%A7%8D%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/" class="next-post btn btn-default" title='Spring Cloud Feign的一种简单使用方式'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Spring Cloud Feign的一种简单使用方式</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMzA1MS85NjEz">
+    <script type="text/javascript">
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+    </script>
+</div>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-简介"><span class="toc-text">Vue 简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MVVM-模式的实现者"><span class="toc-text">MVVM 模式的实现者</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其它-MVVM-实现者"><span class="toc-text">其它 MVVM 实现者</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为什么要使用-Vue-js"><span class="toc-text">为什么要使用 Vue.js</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-js-的两大核心要素"><span class="toc-text">Vue.js 的两大核心要素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据驱动"><span class="toc-text">数据驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件化"><span class="toc-text">组件化</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
