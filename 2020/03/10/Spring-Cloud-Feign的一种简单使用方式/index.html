@@ -195,7 +195,7 @@
 <li><p><strong>添加控制器</strong> <code>DateServiceController</code></p>
 </li>
 </ul>
-<p>提供一个Restful接口而已，该接口的作用是获取服务器上的时间并返回</p>
+<p>提供一个Restful接口</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> EchoController &#123;</span><br><span class="line">    <span class="meta">@GetMapping</span>(value = <span class="string">"/echo/&#123;string&#125;"</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> echo(<span class="meta">@PathVariable</span> <span class="built_in">String</span> <span class="built_in">string</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello Nacos Provider "</span> + <span class="built_in">string</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
