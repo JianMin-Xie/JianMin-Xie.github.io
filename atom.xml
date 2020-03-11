@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jianmin-xie.github.io/"/>
-  <updated>2020-03-11T14:15:08.115Z</updated>
+  <updated>2020-03-11T16:50:12.886Z</updated>
   <id>https://jianmin-xie.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>不用写复杂的参数校验了</title>
+    <link href="https://jianmin-xie.github.io/2020/03/12/%E4%B8%8D%E7%94%A8%E5%86%99%E5%A4%8D%E6%9D%82%E7%9A%84%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E4%BA%86/"/>
+    <id>https://jianmin-xie.github.io/2020/03/12/%E4%B8%8D%E7%94%A8%E5%86%99%E5%A4%8D%E6%9D%82%E7%9A%84%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E4%BA%86/</id>
+    <published>2020-03-11T16:50:15.000Z</published>
+    <updated>2020-03-11T16:50:12.886Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Spring通过注解的方式，方便地为我们提供了各项交互数据的校验工作"><a href="#Spring通过注解的方式，方便地为我们提供了各项交互数据的校验工作" class="headerlink" title="Spring通过注解的方式，方便地为我们提供了各项交互数据的校验工作"></a>Spring通过<strong>注解</strong>的方式，方便地为我们提供了各项交互数据的校验工作</h4><p>数据校验不用以下这样啦~！</p><p><img src="https://i.loli.net/2020/03/12/UBXTwCuHJPAeqhL.jpg" alt="1.JPG"></p><h4 id="实体类："><a href="#实体类：" class="headerlink" title="实体类："></a>实体类：</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Data</span></span><br><span class="line">public class Student implements Serializable &#123;</span><br><span class="line"></span><br><span class="line">    <span class="variable">@NotBlank</span>(message = <span class="string">"用户名不能为空"</span>)</span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    <span class="variable">@NotNull</span>(message = <span class="string">"传入的姓名为null，请传值"</span>)</span><br><span class="line">    <span class="variable">@Min</span>(value = <span class="number">0</span>,message = <span class="string">"传入的学生成绩有误，分数应该在0~100之间"</span>)</span><br><span class="line">    <span class="variable">@Max</span>(value = <span class="number">100</span>,message = <span class="string">"传入的学生成绩有误，分数应该在0~100之间"</span>)</span><br><span class="line">    private Integer score;</span><br><span class="line"></span><br><span class="line">    <span class="variable">@NotNull</span>(message = <span class="string">"传入的姓名为null，请传值"</span>)</span><br><span class="line">    <span class="variable">@NotEmpty</span>(message = <span class="string">"传入的命名为空字符串，请传值"</span>)</span><br><span class="line">    <span class="variable">@Length</span>(min = <span class="number">11</span>,max = <span class="number">11</span>,message = <span class="string">"传入的电话号码长度有误，必须为11位"</span>)</span><br><span class="line">    private String mobile;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>注意一定要@Data或手动实现getset方法</p></blockquote><p>在对象入口处，加入注解@Valid来开启对传入Student对象的校验工作</p><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(value = <span class="meta-string">"add"</span>)</span></span><br><span class="line"><span class="keyword">public</span> String addStudent( <span class="meta">@Valid</span> <span class="meta">@RequestBody</span> Student student)&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//数据库操作</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"SUCCESS"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这个时候，如果某个字段传入错误，比如我传数据的时候，将学生成绩误传为101分，你得到的结果为</p><p><img src="https://i.loli.net/2020/03/12/tS1xINFlneiBcAm.jpg" alt="2.JPG"></p><p>上图中返回的结果<strong>太过繁杂</strong>。</p><p>我们需要做<strong>统一处理</strong>，将具体参数校验的错误信息<strong>抠出来</strong>返还给前端即可。</p><p>为此，配置<strong>全局统一异常拦截器</strong>来格式化所有数据校验的返回结果</p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@ControllerAdvice</span><br><span class="line">@ResponseBody</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">GlobalExceptionIntercepter</span> &#123;</span><br><span class="line">    @ExceptionHandler(value = Exception.<span class="keyword">class</span>)</span><br><span class="line">    <span class="symbol">public</span> <span class="symbol">String</span> <span class="symbol">exceptionHandler</span>(<span class="symbol">HttpServletRequest</span> <span class="symbol">request, <span class="symbol">Exception</span></span> <span class="symbol">e</span>)&#123;</span><br><span class="line">        String failMsg=<span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span>(e instanceof MethodArgumentNotValidException)&#123;</span><br><span class="line">            failMsg=((MethodArgumentNotValidException) e).getBindingResult().getFieldError().getDefaultMessage();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> failMsg;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>此时返还给前端的数据就清楚多了:</p><p><img src="https://i.loli.net/2020/03/12/RUTHq8c4wLsOVoN.jpg" alt="3.JPG"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;Spring通过注解的方式，方便地为我们提供了各项交互数据的校验工作&quot;&gt;&lt;a href=&quot;#Spring通过注解的方式，方便地为我们提供了各项交互数据的校验工作&quot; class=&quot;headerlink&quot; title=&quot;Spring通过注解的方式，方便地为我们提供了各
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://jianmin-xie.github.io/categories/Java/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://jianmin-xie.github.io/tags/SpringBoot/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统之进程管理</title>
