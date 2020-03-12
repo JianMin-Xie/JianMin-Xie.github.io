@@ -27,8 +27,7 @@ PS:免费章节转载注明出处，本篇如果是收费章节禁止转载。�
 
 一、前置说明本节大纲
 使用lombok插件的好处
-
-如何安装lo..." />
+如何安装lom..." />
 
 
 <meta name="robots" content="all" />
@@ -198,31 +197,29 @@ PS:免费章节转载注明出处，本篇如果是收费章节禁止转载。�
         <blockquote>
 <p>PS:免费章节转载注明出处，本篇如果是收费章节禁止转载。违者必究。<br>作者：字母哥博客<br>本文出自：springboot深入浅出系列</p>
 </blockquote>
-<h2 id="一、前置说明"><a href="#一、前置说明" class="headerlink" title="一、前置说明"></a>一、前置说明</h2><h3 id="本节大纲"><a href="#本节大纲" class="headerlink" title="本节大纲"></a>本节大纲</h3><ul>
-<li><p>使用lombok插件的好处</p>
-</li>
-<li><p>如何安装lombok插件</p>
-</li>
-<li><p>使用lombok提高开发效率</p>
-<h2 id="二、使用lombok插件的好处"><a href="#二、使用lombok插件的好处" class="headerlink" title="二、使用lombok插件的好处"></a>二、使用lombok插件的好处</h2><p>我们在java开发过程中，经常会有一些常规性的，重复性的工作。比如：</p>
-</li>
-<li><p>根据成员变量生成get和set方法</p>
-</li>
-<li><p>根据成员变量生成类的构造函数</p>
-</li>
-<li><p>重写toString()和hashCode方法</p>
-</li>
-<li><p>引入日志框架logFactory，用来打印日志<br>以上都是一些重复动作，模板代码。每次都手动生成既浪费时间，又增加了大量的冗余代码。我们可以使用lombok插件来解决这个问题。使我们的编码效率得到大幅度的提高！</p>
-</li>
+<h1 id="一、前置说明"><a href="#一、前置说明" class="headerlink" title="一、前置说明"></a>一、前置说明</h1><h3 id="本节大纲"><a href="#本节大纲" class="headerlink" title="本节大纲"></a>本节大纲</h3><ul>
+<li>使用lombok插件的好处</li>
+<li>如何安装lombok插件</li>
+<li>使用lombok提高开发效率</li>
 </ul>
-<h2 id="三、如何安装lombok插件"><a href="#三、如何安装lombok插件" class="headerlink" title="三、如何安装lombok插件"></a>三、如何安装lombok插件</h2><p>笔者以InelliJ IDEA为例，安装lombok插件。打开 IDEA 的 File-&gt;Settings 面板，并选择 Plugins 选项，然后点击 “Browse repositories”。在搜索框输入”lombok”，结果中找到lombok点击install，然后重启 IDEA。</p>
+<hr>
+<h1 id="二、使用lombok插件的好处"><a href="#二、使用lombok插件的好处" class="headerlink" title="二、使用lombok插件的好处"></a>二、使用lombok插件的好处</h1><p>我们在java开发过程中，经常会有一些常规性的，重复性的工作。比如：</p>
+<ul>
+<li>根据成员变量生成get和set方法</li>
+<li>根据成员变量生成类的构造函数</li>
+<li>重写toString()和hashCode方法</li>
+<li>引入日志框架logFactory，用来打印日志<br>以上都是一些重复动作，模板代码。每次都手动生成既浪费时间，又增加了大量的冗余代码。我们可以使用lombok插件来解决这个问题。使我们的编码效率得到大幅度的提高！</li>
+</ul>
+<hr>
+<h1 id="三、如何安装lombok插件"><a href="#三、如何安装lombok插件" class="headerlink" title="三、如何安装lombok插件"></a>三、如何安装lombok插件</h1><p>笔者以InelliJ IDEA为例，安装lombok插件。打开 IDEA 的 File-&gt;Settings 面板，并选择 Plugins 选项，然后点击 “Browse repositories”。在搜索框输入”lombok”，结果中找到lombok点击install，然后重启 IDEA。</p>
 <p><img src="https://img.kancloud.cn/45/d4/45d483570ca6807eae7de5e6c3ab3cd6_762x511.png" alt=""></p>
 <p>我们还要在pom.xml里面加上如下依赖，插件生效。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>在Spring Boot项目里面不需要加入版本号，spring Boot父项目会代为管理。如果是其他项目，请自行添加版本号！</p>
 </blockquote>
-<h2 id="四、-使用lombok注解简化开发"><a href="#四、-使用lombok注解简化开发" class="headerlink" title="四、 使用lombok注解简化开发"></a>四、 使用lombok注解简化开发</h2><h3 id="4-1-Data注解"><a href="#4-1-Data注解" class="headerlink" title="4.1 Data注解"></a>4.1 Data注解</h3><p>在java类上使用@Data注解，将为我们在编译期自动生成</p>
+<hr>
+<h1 id="四、-使用lombok注解简化开发"><a href="#四、-使用lombok注解简化开发" class="headerlink" title="四、 使用lombok注解简化开发"></a>四、 使用lombok注解简化开发</h1><h2 id="4-1-Data注解"><a href="#4-1-Data注解" class="headerlink" title="4.1 Data注解"></a>4.1 Data注解</h2><p>在java类上使用@Data注解，将为我们在编译期自动生成</p>
 <ul>
 <li>成员变量的get和set方法</li>
 <li>equals方法</li>
@@ -232,13 +229,13 @@ PS:免费章节转载注明出处，本篇如果是收费章节禁止转载。�
 </ul>
 <p><img src="https://img.kancloud.cn/ab/0a/ab0a2c82558587327f06cca3f094d964_763x473.png" alt=""></p>
 <p>上图左侧是使用lombok注解Data，右侧是java字节码class文件反编译结果</p>
-<h3 id="4-2-Slf4j注解"><a href="#4-2-Slf4j注解" class="headerlink" title="4.2 Slf4j注解"></a>4.2 Slf4j注解</h3><p>将在编译期自动帮我们引入Logger日志常量，我们在代码中就直接使用log.info或log.debug打印日志即可。下图中红色代码就用Slf4j注解代替就可以了。</p>
+<h2 id="4-2-Slf4j注解"><a href="#4-2-Slf4j注解" class="headerlink" title="4.2 Slf4j注解"></a>4.2 Slf4j注解</h2><p>将在编译期自动帮我们引入Logger日志常量，我们在代码中就直接使用log.info或log.debug打印日志即可。下图中红色代码就用Slf4j注解代替就可以了。</p>
 <p><img src="https://img.kancloud.cn/d2/4f/d24f55de1112606f804e9bf6280b3be0_750x441.png" alt=""></p>
-<h3 id="4-3-Builder注解"><a href="#4-3-Builder注解" class="headerlink" title="4.3 Builder注解"></a>4.3 Builder注解</h3><p>在Java类上使用Builder注解之后，我们可以使用如下代码为对象属性赋值</p>
+<h2 id="4-3-Builder注解"><a href="#4-3-Builder注解" class="headerlink" title="4.3 Builder注解"></a>4.3 Builder注解</h2><p>在Java类上使用Builder注解之后，我们可以使用如下代码为对象属性赋值</p>
 <figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LombokPOJO lombokPOJO = LombokPOJO<span class="number">.</span>builder()</span><br><span class="line"><span class="meta">        .name</span>(<span class="string">"kobe"</span>)</span><br><span class="line"><span class="meta">        .age</span>(<span class="number">39</span>)</span><br><span class="line"><span class="meta">        .build</span>()<span class="comment">;</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://img.kancloud.cn/bd/a3/bda328a18d6acb36be7a3673f2f4122c_1384x862.png" alt=""></p>
-<h3 id="4-4-AllArgsConstructor注解"><a href="#4-4-AllArgsConstructor注解" class="headerlink" title="4.4 AllArgsConstructor注解"></a>4.4 AllArgsConstructor注解</h3><p>AllArgsConstructor注解将为我们在编译期自动生成：全参构造函数。</p>
+<h2 id="4-4-AllArgsConstructor注解"><a href="#4-4-AllArgsConstructor注解" class="headerlink" title="4.4 AllArgsConstructor注解"></a>4.4 AllArgsConstructor注解</h2><p>AllArgsConstructor注解将为我们在编译期自动生成：全参构造函数。</p>
 <p><img src="https://img.kancloud.cn/f9/4f/f94f6763804e87144618e7c9cde0fd5a_1202x466.png" alt=""></p>
 <p>有全参构造函数注解，自然就有无参构造函数注解：NoArgsConstructor注解。</p>
 <p>lombok有非常多的好用的注解，这里给大家集中介绍几个经常会用到的。更多的用法参考github（插件安装图中，有github连接,上图中黄色区域）</p>
@@ -300,7 +297,7 @@ PS:免费章节转载注明出处，本篇如果是收费章节禁止转载。�
             文章目录
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、前置说明"><span class="toc-text">一、前置说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#本节大纲"><span class="toc-text">本节大纲</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、使用lombok插件的好处"><span class="toc-text">二、使用lombok插件的好处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、如何安装lombok插件"><span class="toc-text">三、如何安装lombok插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、-使用lombok注解简化开发"><span class="toc-text">四、 使用lombok注解简化开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Data注解"><span class="toc-text">4.1 Data注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Slf4j注解"><span class="toc-text">4.2 Slf4j注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-Builder注解"><span class="toc-text">4.3 Builder注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-AllArgsConstructor注解"><span class="toc-text">4.4 AllArgsConstructor注解</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前置说明"><span class="toc-text">一、前置说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#本节大纲"><span class="toc-text">本节大纲</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、使用lombok插件的好处"><span class="toc-text">二、使用lombok插件的好处</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、如何安装lombok插件"><span class="toc-text">三、如何安装lombok插件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、-使用lombok注解简化开发"><span class="toc-text">四、 使用lombok注解简化开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-Data注解"><span class="toc-text">4.1 Data注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-Slf4j注解"><span class="toc-text">4.2 Slf4j注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-Builder注解"><span class="toc-text">4.3 Builder注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-AllArgsConstructor注解"><span class="toc-text">4.4 AllArgsConstructor注解</span></a></li></ol></li></ol>
         
     </div>
 </aside>

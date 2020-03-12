@@ -200,6 +200,8 @@
 </ul>
 <p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/35253fa4-f60a-4e3b-aaec-8fc835aabdac.gif" alt=""></p>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Insertion&lt;T</span> <span class="keyword">extends</span> <span class="title">Comparable&lt;T&gt;&gt;</span> <span class="keyword">extends</span> <span class="title">Sort&lt;T&gt;</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    public void sort(<span class="type">T</span>[] nums) &#123;</span><br><span class="line">        int <span class="type">N</span> = nums.length;</span><br><span class="line">        <span class="keyword">for</span> (int i = <span class="number">1</span>; i &lt; <span class="type">N</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (int j = i; j &gt; <span class="number">0</span> &amp;&amp; less(nums[j], nums[j - <span class="number">1</span>]); j--) &#123;</span><br><span class="line">                swap(nums, j, j - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
 <h1 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h1><p>对于大规模的数组，插入排序很慢，因为它只能交换相邻的元素，每次只能将逆序数量减少 1。希尔排序的出现就是为了解决插入排序的这种局限性，它通过交换不相邻的元素，每次可以将逆序数量减少大于 1。</p>
 <p>希尔排序使用插入排序对间隔 h 的序列进行排序。通过不断减小 h，最后令 h=1，就可以使得整个数组是有序的。</p>
 <p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/7818c574-97a8-48db-8e62-8bfb030b02ba.png" alt="image"></p>
@@ -220,6 +222,12 @@
     </div>
 </article>
 <div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2020/03/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B9%8B%E9%93%BE%E8%B7%AF%E5%B1%82/" class="pre-post btn btn-default" title='计算机网络之链路层'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            计算机网络之链路层</span>
+    </a>
     
     
     <a href="/2020/03/12/%E4%B8%8D%E7%94%A8%E5%86%99%E5%A4%8D%E6%9D%82%E7%9A%84%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E4%BA%86/" class="next-post btn btn-default" title='不用写复杂的参数校验了'>
