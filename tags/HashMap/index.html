@@ -33,7 +33,7 @@
 
 <title>
     
-    分类: 数据结构与算法 |
+    标签: HashMap |
     
     JianMin-Xie的博客
 </title>
@@ -152,8 +152,9 @@
                     <ol class="breadcrumb">
     
     <li>
-        数据结构与算法
+        HashMap
     </li>
+    
     
 </ol>
 
@@ -162,91 +163,18 @@
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
-                <a href="/2020/03/14/%E7%AE%97%E6%B3%95%E4%B9%8B%E5%A0%86%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%AF%94%E8%BE%83/">
-                    算法之堆排序与各种排序算法比较</a>
+                <a href="/2020/04/14/HashMap%E8%AF%A6%E8%A7%A3/">
+                    HashMap详解</a>
             </h1>
             <div class="post-meta"> &bull;
                 <time class="post-date" datetime="" title="">
-                    2020年03月14日
+                    2020年04月14日
                 </time>
             </div>
         </div>
         <p class="brief">
             
-            堆排序1. 堆堆中某个节点的值总是大于等于其子节点的值，并且堆是一颗完全二叉树。
-堆可以用数组来表示，这是因为堆是完全二叉树，而完全二叉树很容易就存储在数组中。位置 k 的节点的父节点位置为 k/2，而它的两个子节点的位置分别为 2k...
-            
-        </p>
-    </div>
-</article>
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2020/03/13/%E7%AE%97%E6%B3%95%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
-                    算法之归并排序与快速排序</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2020年03月13日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            归并排序归并排序的思想是将数组分成两部分，分别进行排序，然后归并起来。
-
-1.归并流程
-2.合并流程
-3.代码实现123456789101112131415161718192021222324252627282930313233343...
-            
-        </p>
-    </div>
-</article>
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2020/03/12/%E7%AE%97%E6%B3%95%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/">
-                    算法之插入排序与希尔排序</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2020年03月12日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            插入排序每次都将当前元素插入到左侧已经排序的数组中，使得插入之后左侧数组依然有序。
-对于数组 {3, 5, 2, 4, 1}，它具有以下逆序：(3, 2), (3, 1), (5, 2), (5, 4), (5, 1), (2, 1)...
-            
-        </p>
-    </div>
-</article>
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2020/03/11/%E7%AE%97%E6%B3%95%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">
-                    算法之选择排序与冒泡排序</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2020年03月11日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            约定待排序的元素需要实现 Java 的 Comparable 接口，该接口有 compareTo() 方法，可以用它来判断两个元素的大小关系。
-使用辅助函数 less() 和 swap() 来进行比较和交换的操作，使得代码的可读性和可...
+            HashMap 底层实现原理是什么？JDK8 做了哪些优化？在 JDK 1.7 中 HashMap 是以数组加链表的形式组成的，JDK 1.8 之后新增了红黑树的组成结构，当链表大于 8 并且容量大于 64 时，链表结构会转换成红黑树...
             
         </p>
     </div>
